@@ -1,5 +1,11 @@
 from django.db import models
 from users.models import User
+from django.contrib.auth import get_user_model
+
+
+class YourServiceModel(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
 
 
 class Service(models.Model):
