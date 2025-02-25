@@ -1,0 +1,17 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.card {
+    border-radius: 10px;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
