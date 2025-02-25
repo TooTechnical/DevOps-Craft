@@ -6,6 +6,7 @@ from services.models import Service, Order
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
+
 @csrf_exempt
 def create_checkout_session(request, service_id):
     service = Service.objects.get(id=service_id)
@@ -26,6 +27,7 @@ def create_checkout_session(request, service_id):
         cancel_url=request.build_absolute_uri('/cancel/'),
     )
     return JsonResponse({'sessionId': session.id})
+
 
 @csrf_exempt
 def stripe_webhook(request):

@@ -1,6 +1,7 @@
 from django.db import models
 from users.models import User
 
+
 class Service(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
@@ -11,6 +12,7 @@ class Service(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class Order(models.Model):
     client = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -23,3 +25,4 @@ class Order(models.Model):
         ('completed', 'Completed'),
     ]
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='pending')
+    
